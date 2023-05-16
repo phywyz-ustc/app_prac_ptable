@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chemical Element Search</title>
+    <style>
+      table {
+          border-collapse: collapse;
+      }
+
+      td {
+          border: 1px solid #ccc;
+          padding: 8px;
+      }
+    </style>
+    <script>
+      function addElement(elementName) {
+          document.getElementById("input").value += elementName + " ";
+      }
+    </script>
+  </head>
+  <body style="background-color: #ccf8ff">
+    <div id="header" style="background-color:#FFA500;">
+    <h1 style="margin-bottom:0;">Chemical Element Search</h1></div>
+    <form action="/search" method="POST">
+      <div id="header" style="background-color:#00ffff;width:500px">
+      <p>Option 1: Select an element:
+      </p>
+      <select name="element1">
+        <option value="1">H</option>
+        <option value="2">He</option>
+        <option value="3">Li</option>
+        <option value="4">Be</option>
+        <option value="5">B</option>
+        <option value="6">C</option>
+        <option value="7">N</option>
+        <option value="8">O</option>
+        <option value="9">F</option>
+        <option value="10">Ne</option>
+        <option value="11">Na</option>
+        <option value="12">Mg</option>
+        <option value="13">Al</option>
+        <option value="14">Si</option>
+        <option value="15">P</option>
+        <option value="16">S</option>
+        <option value="17">Cl</option>
+        <option value="18">Ar</option>
+        <option value="19">K</option>
+        <option value="20">Ca</option>
+        <option value="21">Sc</option>
+        <option value="22">Ti</option>
+        <option value="23">V</option>
+        <option value="24">Cr</option>
+        <option value="25">Mn</option>
+        <option value="26">Fe</option>
+        <option value="27">Co</option>
+        <option value="28">Ni</option>
+        <option value="29">Cu</option>
+        <option value="30">Zn</option>
+        <option value="31">Ga</option>
+        <option value="32">Ge</option>
+        <option value="33">As</option>
+        <option value="34">Se</option>
+        <option value="35">Br</option>
+        <option value="36">Kr</option>
+        <option value="37">Rb</option>
+        <option value="38">Sr</option>
+        <option value="39">Yt</option>
+        <option value="40">Zr</option>
+        <option value="41">Nb</option>
+        <option value="42">Mo</option>
+        <option value="43">Tc</option>
+        <option value="44">Ru</option>
+        <option value="45">Rh</option>
+        <option value="46">Pd</option>
+        <option value="47">Ag</option>
+        <option value="48">Cd</option>
+        <option value="49">In</option>
+        <option value="50">Sn</option>
+        <option value="51">Sb</option>
+        <option value="52">Te</option>
+        <option value="53">I</option>
+        <option value="54">Xe</option>
+        <option value="55">Cs</option>
+        <option value="56">Ba</option>
+        <option value="57">La</option>
+        <option value="58">Ce</option>
+        <option value="59">Pr</option>
+        <option value="60">Nd</option>
+        <option value="61">Pm</option>
+        <option value="62">Sm</option>
+        <option value="63">Eu</option>
+        <option value="64">Gd</option>
+        <option value="65">Tb</option>
+        <option value="66">Dy</option>
+        <option value="67">Ho</option>
+        <option value="68">Er</option>
+        <option value="69">Tm</option>
+        <option value="70">Yb</option>
+        <option value="71">Lu</option>
+        <option value="72">Hf</option>
+        <option value="73">Ta</option>
+        <option value="74">W</option>
+        <option value="75">Re</option>
+        <option value="76">Os</option>
+        <option value="77">Ir</option>
+        <option value="78">Pt</option>
+        <option value="79">Au</option>
+        <option value="80">Hg</option>
+        <option value="81">Tl</option>
+        <option value="82">Pb</option>
+        <option value="83">Bi</option>
+        <option value="84">Po</option>
+        <option value="85">At</option>
+        <option value="86">Rn</option>
+        <option value="87">Fr</option>
+        <option value="88">Ra</option>
+        <option value="89">Ac</option>
+        <option value="90">Th</option>
+        <option value="91">Pa</option>
+        <option value="92">U</option>
+        <option value="93">Np</option>
+        <option value="94">Pu</option>
+        <option value="95">Am</option>
+        <option value="96">Cm</option>
+        <option value="97">Bk</option>
+        <option value="98">Cf</option>
+        <option value="99">Es</option>
+        <option value="100">Fm</option>
+        <option value="101">Md</option>
+        <option value="102">No</option>
+        <option value="103">Lr</option>
+        <option value="104">Rf</option>
+        <option value="105">Db</option>
+        <option value="106">Sg</option>
+        <option value="107">Bh</option>
+        <option value="108">Hs</option>
+        <option value="109">Mt</option>
+        <option value="110">Ds</option>
+        <option value="111">Rg</option>
+        <option value="112">Cn</option>
+        <option value="113">Nh</option>
+        <option value="114">Fl</option>
+        <option value="115">Mc</option>
+        <option value="116">Lv</option>
+        <option value="117">Ts</option>
+        <option value="118">Og</option>
+
+      </select>
+      <input type="submit" value="SearchName"><br><br>
+      </div>
+
+      <div id="header" style="background-color:#00ff0d;width:500px">
+      <p>Option 2: Input the atomic number:</p>
+      <input type="number" name="number" placeholder="Enter a number">
+      <input type="submit" value="SearchNum"><br><br>
+      </div>
+      <div id="header" style="background-color:#eeff00;width:500px">
+      <p>Option 3: Click two elements to get some info or find their compounds:</p>
+        <input type="text" id="input" ><br><br>
+        <input type="submit" value="SearchComText">
+        <input type="submit" value="SearchNameText"><br><br>
+      </div>
+      <div id="header" style="background-color:#00ffd5;width:766px;position: absolute; top: 80px; right: 90px;">
+        <table>
+          <tr>
+              <td onclick="addElement('H')">H</td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td onclick="addElement('He')">He</td>
+          </tr>
+          <tr>    
+              <td onclick="addElement('Li')">Li</td>
+              <td onclick="addElement('Be')">Be</td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td onclick="addElement('B')">B</td>
+              <td onclick="addElement('C')">C</td>
+              <td onclick="addElement('N')">N</td>
+              <td onclick="addElement('O')">O</td>
+              <td onclick="addElement('F')">F</td>
+              <td onclick="addElement('Ne')">Ne</td>
+          </tr>
+          <tr>
+              <td onclick="addElement('Na')">Na</td>
+              <td onclick="addElement('Mg')">Mg</td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td ></td>
+              <td onclick="addElement('Al')">Al</td>
+              <td onclick="addElement('Si')">Si</td>
+              <td onclick="addElement('P')">P</td>
+              <td onclick="addElement('S')">S</td>
+              <td onclick="addElement('Cl')">Cl</td>
+              <td onclick="addElement('Ar')">Ar</td>
+          </tr>
+          <tr>    
+              <td onclick="addElement('K')">K</td>
+              <td onclick="addElement('Ca')">Ca</td>
+              <td onclick="addElement('Sc')">Sc</td>  
+              <td onclick="addElement('Ti')">Ti</td>  
+              <td onclick="addElement('V')">V</td>  
+              <td onclick="addElement('Cr')">Cr</td>  
+              <td onclick="addElement('Mn')">Mn</td>  
+              <td onclick="addElement('Fe')">Fe</td>  
+              <td onclick="addElement('Co')">Co</td>  
+              <td onclick="addElement('Ni')">Ni</td>  
+              <td onclick="addElement('Cu')">Cu</td>  
+              <td onclick="addElement('Zn')">Zn</td>  
+              <td onclick="addElement('Ga')">Ga</td>  
+              <td onclick="addElement('Ge')">Ge</td>  
+              <td onclick="addElement('As')">As</td>  
+              <td onclick="addElement('Se')">Se</td>  
+              <td onclick="addElement('Br')">Br</td>  
+              <td onclick="addElement('Kr')">Kr</td>
+          </tr>
+          <tr>    
+              <td onclick="addElement('Rb')">Rb</td>  
+              <td onclick="addElement('Sr')">Sr</td>  
+              <td onclick="addElement('Y')">Y</td>  
+              <td onclick="addElement('Zr')">Zr</td>  
+              <td onclick="addElement('Nb')">Nb</td>  
+              <td onclick="addElement('Mo')">Mo</td>  
+              <td onclick="addElement('Tc')">Tc</td>  
+              <td onclick="addElement('Ru')">Ru</td>  
+              <td onclick="addElement('Rh')">Rh</td>  
+              <td onclick="addElement('Pd')">Pd</td>  
+              <td onclick="addElement('Ag')">Ag</td>  
+              <td onclick="addElement('Cd')">Cd</td> 
+              <td onclick="addElement('In')">In</td>  
+              <td onclick="addElement('Sn')">Sn</td>  
+              <td onclick="addElement('Sb')">Sb</td>  
+              <td onclick="addElement('Te')">Te</td>  
+              <td onclick="addElement('I')">I</td>  
+              <td onclick="addElement('Xe')">Xe</td> 
+          </tr>
+          <tr>    
+              <td onclick="addElement('Cs')">Cs</td>  
+              <td onclick="addElement('Ba')">Ba</td>  
+              <td >La-Lu</td>  
+              <td onclick="addElement('Hf')">Hf</td>  
+              <td onclick="addElement('Ta')">Ta</td>  
+              <td onclick="addElement('W')">W</td>  
+              <td onclick="addElement('Re')">Re</td>  
+              <td onclick="addElement('Os')">Os</td>  
+              <td onclick="addElement('Ir')">Ir</td>  
+              <td onclick="addElement('Pt')">Pt</td>  
+              <td onclick="addElement('Au')">Au</td>  
+              <td onclick="addElement('Hg')">Hg</td> 
+              <td onclick="addElement('Tl')">Tl</td>  
+              <td onclick="addElement('Pb')">Pb</td>  
+              <td onclick="addElement('Bi')">Bi</td>  
+              <td onclick="addElement('Po')">Po</td>  
+              <td onclick="addElement('At')">At</td>  
+              <td onclick="addElement('Rn')">Rn</td>
+          </tr>
+          <tr>    
+              <td onclick="addElement('Fr')">Fr</td>  
+              <td onclick="addElement('Ra')">Ra</td>  
+              <td >Ac-Lr</td>  
+              <td onclick="addElement('Rf')">Rf</td>  
+              <td onclick="addElement('Db')">Db</td>  
+              <td onclick="addElement('Sg')">Sg</td>  
+              <td onclick="addElement('Bh')">Bh</td>  
+              <td onclick="addElement('Hs')">Hs</td>  
+              <td onclick="addElement('Mt')">Mt</td>  
+              <td onclick="addElement('Ds')">Ds</td>  
+              <td onclick="addElement('Rg')">Rg</td>  
+              <td onclick="addElement('Cn')">Cn</td> 
+              <td onclick="addElement('Nh')">Nh</td>  
+              <td onclick="addElement('Fl')">Fl</td>  
+              <td onclick="addElement('Mc')">Mc</td>  
+              <td onclick="addElement('Lv')">Lv</td>  
+              <td onclick="addElement('Ts')">Ts</td>  
+              <td onclick="addElement('Og')">Og</td>
+          </tr>
+          <tr>    
+              <td></td>  
+              <td></td>  
+              <td >La-Lu:</td>  
+              <td onclick="addElement('La')">La</td>  
+              <td onclick="addElement('Ce')">Ce</td>  
+              <td onclick="addElement('Pr')">Pr</td>  
+              <td onclick="addElement('Nd')">Nd</td>  
+              <td onclick="addElement('Pm')">Pm</td>  
+              <td onclick="addElement('Sm')">Sm</td>  
+              <td onclick="addElement('Eu')">Eu</td>  
+              <td onclick="addElement('Gd')">Gd</td>  
+              <td onclick="addElement('Tb')">Tb</td> 
+              <td onclick="addElement('Dy')">Dy</td>  
+              <td onclick="addElement('Ho')">Ho</td>  
+              <td onclick="addElement('Er')">Er</td>  
+              <td onclick="addElement('Tm')">Tm</td>  
+              <td onclick="addElement('Yb')">Yb</td>  
+              <td onclick="addElement('Lu')">Lu</td>
+          </tr>
+          <tr>    
+              <td></td>  
+              <td></td>  
+              <td >Ac-Lr:</td>  
+              <td onclick="addElement('Ac')">Ac</td>  
+              <td onclick="addElement('Th')">Th</td>  
+              <td onclick="addElement('Pa')">Pa</td>  
+              <td onclick="addElement('U')">U</td>  
+              <td onclick="addElement('Np')">Np</td>  
+              <td onclick="addElement('Pu')">Pu</td>  
+              <td onclick="addElement('Am')">Am</td>  
+              <td onclick="addElement('Cm')">Cm</td>  
+              <td onclick="addElement('Bk')">Bk</td> 
+              <td onclick="addElement('Cf')">Cf</td>  
+              <td onclick="addElement('Es')">Es</td>  
+              <td onclick="addElement('Fm')">Fm</td>  
+              <td onclick="addElement('Md')">Md</td>  
+              <td onclick="addElement('No')">No</td>  
+              <td onclick="addElement('Lr')">Lr</td>          
+          </tr>
+              
+        </table>
+      </div>
+      <div>
+        <h1>Compounds Infomation</h1>
+        <p>Name:{{result.text}}<br>
+           
+
+        </p>
+
+      </div>
+    </form>
+  </body>
+</html>
